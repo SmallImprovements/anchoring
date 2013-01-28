@@ -1,0 +1,14 @@
+body {
+  font-family: georgia, serif;
+  background: white;
+  color: black;
+  line-height: 1.5;
+}
+div {
+  margin: 0 auto;
+  width: 500px;
+}
+h1,
+h2 {
+  font-family: futura, 'helvetica neue', helvetica, sans-serif;
+}

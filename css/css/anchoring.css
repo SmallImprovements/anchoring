@@ -1,0 +1,25 @@
+/*
+
+a comment
+
+*/
+.anchoring {
+  position: relative;
+}
+.anchoring > .anchor {
+  position: absolute;
+  display: block;
+  width: 1em;
+  left: -1em;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.1;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.anchoring:hover > .anchor {
+  opacity: 1;
+}
