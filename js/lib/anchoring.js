@@ -1,5 +1,5 @@
 /*
-	anchroing
+	anchoring
 	jQuery Plugin to automatically add anchors to elements to make them linkable.
 	(c) 2013 Small Improvements GmbH
 	Author: Timur Çelikel
