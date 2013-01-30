@@ -1,3 +1,12 @@
+/*
+	anchroing
+	jQuery Plugin to automatically add anchors to elements to make them linkable.
+	(c) 2013 Small Improvements GmbH
+	Author: Timur Çelikel
+	Version: 0.1
+	License: MIT - http://www.opensource.org/licenses/mit-license.php
+*/
+
 (function($) {
 
     $.fn.anchoring = function(options) {
