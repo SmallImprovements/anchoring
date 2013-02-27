@@ -17,7 +17,7 @@
             linkClass: 'anchor',
             excludeClass: 'noAnchoring',
             scrollOffset: 0,
-            maxLength: 0,
+            maxLength: 100,
             maxWords: 0
 
         }, options);
@@ -97,9 +97,20 @@
         });
 
         if($(window.location.hash).length) {
-            setTimeout(function(){
-                $('html, body').scrollTop($(window.location.hash).offset().top + settings.scrollOffset);
-            },500)
+
+            $(window).bind('load', function(){
+
+                var scrollToPosition = $(window.location.hash).offset().top + settings.scrollOffset;
+
+                // there seems to be no nice way to find out when scrolltop works properly so i try as often
+                // as it takes. if there is a better way please tell me: github.com/timurc
+                var timer = setInterval(function(){
+                    $(window).scrollTop(scrollToPosition);
+                    if (scrollToPosition + ' vs. ' + $(window).scrollTop()) clearInterval(timer);
+                },100);
+
+            });
+
         }
 
         return this;
