@@ -1,0 +1,27 @@
+{
+    "name": "anchoring",
+    "title": "jQuery Anchoring",
+    "description": "jQuery Plugin to automatically add anchors to elements to make them linkable.",
+    "keywords": [
+        "anchor",
+        "link"
+    ],
+    "version": "0.1.0",
+    "author": {
+        "name": "Timur Çelikel",
+        "url": "http://timurcelikel.com",
+        "email": "me@timurcelikel.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.github.com/SmallImprovements/anchoring/master/MIT-licence.txt"
+        }
+    ],
+    "bugs": "https://github.com/SmallImprovements/anchoring/issues",
+    "homepage": "https://github.com/SmallImprovements/anchoring",
+    "docs": "https://github.com/SmallImprovements/anchoring",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
