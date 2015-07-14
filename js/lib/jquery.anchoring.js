@@ -28,7 +28,7 @@
         
         if (settings.scrollOffset) {
             internalLinks = Array.prototype.filter.call(document.getElementsByTagName('a'), function(e) {
-                return (e.getAttribute('href') || '').startsWith('#');
+                return (e.getAttribute('href') || '').charAt(0) === '#';
             });
         }
 
