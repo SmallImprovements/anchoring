@@ -24,6 +24,14 @@
 
         var newIDs = new Array();
 
+        var internalLinks = [];
+        
+        if (settings.scrollOffset) {
+            internalLinks = Array.prototype.filter.call(document.getElementsByTagName('a'), function(e) {
+                return (e.getAttribute('href') || '').startsWith('#');
+            });
+        }
+
         this.each(function(){
             $this = $(this);
 
@@ -68,23 +76,31 @@
                 $this.attr('id', newID);
                 newIDs.push(newID);
 
+                currentID = newID;
             }
 
             var anchor = $("<a class='" + settings.linkClass + "'/>")
-                .attr('href', (newID) ? '#' + newID : '#' + currentID)
+                .attr('href', '#' + currentID)
                 .text(settings.linkText);
 
             if(settings.scrollOffset) {
 
-                anchor.click(function(e) {
+                function handleClick(e) {
+                    e.preventDefault();
                     if (window.history.pushState) {
-                        e.preventDefault();
-                        window.history.pushState(null, null, '#' + newID);
+                        window.history.pushState(null, null, '#' + currentID);
                         $('html, body').scrollTop((anchor.offset().top + settings.scrollOffset));
                     } else {
                         setTimeout(function(){
                             $('html, body').scrollTop((anchor.offset().top + settings.scrollOffset));
                         },20)
+                    }
+                };
+                
+                anchor.click(handleClick);
+                Array.prototype.forEach.call(internalLinks, function(e) {
+                    if (e.getAttribute('href') === '#' + currentID) {
+                        e.addEventListener('click', handleClick);
                     }
                 });
 
